@@ -15,7 +15,6 @@ function getThemeFromLocalStorage() {
 
 function Navbar() {
   const [theme, setTheme] = useState(getThemeFromLocalStorage());
-  console.log(theme);
   function handleTheme() {
     const { winter, dracula } = themes;
     const newTheme = theme === winter ? dracula : winter;
