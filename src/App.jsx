@@ -17,6 +17,7 @@ import { ErrorElement } from "./components";
 
 // loaders
 import { loader as LandingLoader } from "./pages/Landing";
+import { loader as ProductLoader } from "./pages/SingleProduct";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,7 @@ const router = createBrowserRouter([
       {
         path: "products/:id",
         element: <SingleProduct />,
+        loader: ProductLoader,
       },
     ],
   },
