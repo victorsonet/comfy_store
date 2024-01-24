@@ -1,4 +1,4 @@
-function FormInput({ label, name, type, defaultValue }) {
+function FormInput({ label, name, type, defaultValue, size }) {
   return (
     <label className="form-control">
       <div className="label">
@@ -9,7 +9,7 @@ function FormInput({ label, name, type, defaultValue }) {
         name={name}
         defaultValue={defaultValue}
         placeholder="Type here"
-        className="input input-bordered"
+        className={`input input-bordered capitalize ${size}`}
       />
     </label>
   );
