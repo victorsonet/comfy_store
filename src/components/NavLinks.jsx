@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const links = [
@@ -10,9 +11,11 @@ const links = [
 ];
 
 function NavLinks() {
+  const user = useSelector((state) => state.userState.user);
   return (
     <>
       {links.map(({ id, url, text }) => {
+        if ((url === "orders" || url === "checkout") && !user) return null;
         return (
           <li key={id}>
             <NavLink to={url} className="capitalize">
