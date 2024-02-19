@@ -19,10 +19,13 @@ import { ErrorElement } from "./components";
 import { loader as LandingLoader } from "./pages/Landing";
 import { loader as ProductLoader } from "./pages/SingleProduct";
 import { loader as ProductsLoader } from "./pages/Products";
+import { loader as CheckoutLoader } from "./pages/Checkout";
+import { loader as OrdersLoader } from "./pages/Orders";
 
 // actions
 import { action as registerAction } from "./pages/Register";
 import { action as loginAction } from "./pages/Login";
+import { action as CheckoutAction } from "./components/CheckoutForm";
 import { store } from "./store";
 
 const router = createBrowserRouter([
@@ -48,10 +51,13 @@ const router = createBrowserRouter([
       {
         path: "checkout",
         element: <Checkout />,
+        loader: CheckoutLoader(store),
+        action: CheckoutAction(store),
       },
       {
         path: "orders",
         element: <Orders />,
+        loader: OrdersLoader(store),
       },
       {
         path: "products",
