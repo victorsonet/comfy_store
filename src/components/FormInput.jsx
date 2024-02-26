@@ -9,7 +9,7 @@ function FormInput({ label, name, type, defaultValue, size }) {
         name={name}
         defaultValue={defaultValue}
         placeholder="Type here"
-        className={`input input-bordered capitalize ${size}`}
+        className={`input input-bordered ${size}`}
       />
     </label>
   );
